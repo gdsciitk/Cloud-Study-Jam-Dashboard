@@ -1,0 +1,20 @@
+.loginPage {
+    background-color: #F5F5F5;
+    height: 100vh;
+    width: 100%;
+}
+
+.loginPage header {
+    color: black;
+}
+
+.loginCard {
+    background-color: white;
+    max-width: 700px;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

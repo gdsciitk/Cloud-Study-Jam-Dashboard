@@ -1,0 +1,22 @@
+.welcomeDiv {
+    display: flex;
+    background-color: #2BEBC8;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    height: 100%;
+}
+
+.heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+.rightImg {
+    object-fit: contain;
+    width: 400px;
+}
