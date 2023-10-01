@@ -1,4 +1,6 @@
 import * as React from 'react';
+//import { useState } from 'react';
+//import { setRows } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+//import SearchBar from 'material-ui-search-bar'; // Import the SearchBar component
 
 // Import the leaderboard data
 import { leaderboard } from '../../data';
@@ -35,7 +38,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function CustomizedTables() {
+  //const [searched, setSearched] = useState("");
+  //const requestSearch = (searchedVal) => {
+   // const filteredRows = sortedLeaderboard.filter((row) => {
+     // return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+    //});
+    //setRows(filteredRows);
+  //};
+
+  //const cancelSearch = () => {
+    //setSearched("");
+    //requestSearch(searched);
+ // };
   return (
+    //<>
+      //  <SearchBar
+        //  value={searched}
+          //onChange={(searchVal) => requestSearch(searchVal)}
+          //onCancelSearch={() => cancelSearch()}
+       // />
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
@@ -64,5 +85,6 @@ export default function CustomizedTables() {
         </TableBody>
       </Table>
     </TableContainer>
+    //</>
   );
-}
+  }

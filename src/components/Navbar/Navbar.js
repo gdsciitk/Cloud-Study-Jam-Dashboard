@@ -54,7 +54,9 @@ export default function Navbar({ handleThemeChange, toggleSidebar}) {
                         <MenuIcon/> 
                     </IconButton>}
                     <ShowChartIcon /><b>Tracker</b>
-                    <Searchbar />
+                    <div style ={{paddingLeft: "450px)"}}>
+                    <img src="/gdsc.png" style={{width: "30rem"}}/>
+                    </div>
                 </Container>
                 <ThemeSwitcher handleThemeChange={handleThemeChange} />
                 <IconButton sx={{ mr: 1 }}>

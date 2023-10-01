@@ -11,6 +11,7 @@ import ExpandedBarChart from '../../components/Charts/ExpandedBarChart';
 import PieChart from '../../components/Charts/PieChart';
 import WelcomeMsg from '../../components/WelcomeMsg/WelcomeMsg';
 import CustomizedTables from '../../components/Leaderboard/Leaderboard';
+import Hero from '../../components/Hero';
 
 export default function Dashboard({ handleThemeChange }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -44,6 +45,8 @@ export default function Dashboard({ handleThemeChange }) {
             {isSidebarOpen && <Sidebar />}
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
+                
+                {/* <Hero/> */}
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={7}> 
                         <WelcomeMsg />
