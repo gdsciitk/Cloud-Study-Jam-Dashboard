@@ -20,12 +20,12 @@ export default function Sidebar() {
     return <Drawer
         variant="permanent"
         sx={{
-            width: 240,
+            width: 0,
             flexShrink: 0,
-            [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' },
+            [`& .MuiDrawer-paper`]: { width: 0, boxSizing: 'border-box' },
         }}
     >
-        <Toolbar />
+             <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
             <List>
                 <ListItem disablePadding>
@@ -82,4 +82,4 @@ export default function Sidebar() {
             </List>
         </Box>
     </Drawer>
-}
+} 

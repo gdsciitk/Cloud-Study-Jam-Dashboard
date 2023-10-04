@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { AppBar, Avatar, Container, Divider, IconButton, Switch, Toolbar } from "@mui/material";
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import styles from "./navbar.module.css"
 import ThemeSwitcher from "../ThemeSwitcher";
-import Searchbar from "./Searchbar";
+import Searchbar from "../Searchbar";
 import MenuIcon from '@mui/icons-material/Menu';
 
 import Popover from '@mui/material/Popover';
@@ -53,15 +52,11 @@ export default function Navbar({ handleThemeChange, toggleSidebar}) {
                     >
                         <MenuIcon/> 
                     </IconButton>}
-                    <ShowChartIcon /><b>Tracker</b>
-                    <div style ={{paddingLeft: "450px)"}}>
-                    <img src="/gdsc.png" style={{width: "30rem"}}/>
+                    <div>
+                    <img src="/gdsc.png" style={{width: "30rem", height: "42px", padding: "8px 0px 2px"}}/>
                     </div>
                 </Container>
                 <ThemeSwitcher handleThemeChange={handleThemeChange} />
-                <IconButton sx={{ mr: 1 }}>
-                    <NotificationsIcon />
-                </IconButton>
                 <Divider orientation="vertical" flexItem />
                 <p className={styles.userName}>User Name</p>
                 <Avatar

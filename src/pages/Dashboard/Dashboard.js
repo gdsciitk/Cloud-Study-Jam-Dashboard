@@ -12,6 +12,7 @@ import PieChart from '../../components/Charts/PieChart';
 import WelcomeMsg from '../../components/WelcomeMsg/WelcomeMsg';
 import CustomizedTables from '../../components/Leaderboard/Leaderboard';
 import Hero from '../../components/Hero';
+import Searchbar from '../../components/Searchbar';
 
 export default function Dashboard({ handleThemeChange }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -45,32 +46,14 @@ export default function Dashboard({ handleThemeChange }) {
             {isSidebarOpen && <Sidebar />}
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                
-                {/* <Hero/> */}
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={7}> 
-                        <WelcomeMsg />
-                    </Grid>
-                    <Grid item xs={12} md={5}> 
-                        <BarChart />
-                    </Grid>
-                    <Grid item xs={12} md={3.5}> 
-                        <UpdateChart index={0} />
-                    </Grid>
-                    <Grid item xs={12} md={3.5}> 
-                        <UpdateChart index={1} />
-                    </Grid>
-                    <Grid item xs={12} md={5}> 
-                        <UpdateChart index={2} />
-                    </Grid>
-                    <Grid item xs={12} md={7}> 
-                        <ExpandedBarChart />
-                    </Grid>
-                    <Grid item xs={12} md={5}> 
-                        <PieChart />
+                <Grid container spacing={3}>
+                    <Grid item xs={12} md={12}> 
+                        <Hero/>
                     </Grid>
                 </Grid>
                 <CustomizedTables/>
+                <UpdateChart index = {0}/>
+                
             </Box>  
         </Box>
     );
