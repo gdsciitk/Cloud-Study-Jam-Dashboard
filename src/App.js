@@ -22,7 +22,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path='/ element={<SharedLayout />}>
+          <Route path='/' element={<SharedLayout />}>
             <Route index element={<Dashboard handleThemeChange={handleThemeChange} />}/>
           </Route>
           <Route path='login' element={<LoginPage/>} />

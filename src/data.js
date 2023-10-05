@@ -20,7 +20,7 @@ export const leaderboard = [
         TotalC : "Yes" 
     },
     { 
-        rank : 3, 
+        rank : 2, 
         name : "Prathamesh", 
         courseC : 8,
         SkillBadges: 9, 
