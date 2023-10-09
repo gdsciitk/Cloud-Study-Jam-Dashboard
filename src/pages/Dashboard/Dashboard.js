@@ -13,6 +13,8 @@ import WelcomeMsg from '../../components/WelcomeMsg/WelcomeMsg';
 import CustomizedTables from '../../components/Leaderboard/Leaderboard';
 import Hero from '../../components/Hero';
 import Searchbar from '../../components/Searchbar';
+import styles from './dashboard.css'
+import Profile from './Profile'
 
 export default function Dashboard({ handleThemeChange }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -40,21 +42,22 @@ export default function Dashboard({ handleThemeChange }) {
     };
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex'}}>-
             <CssBaseline />
             <Navbar handleThemeChange={handleThemeChange} toggleSidebar={togglesmallSidebar}/>
             {isSidebarOpen && <Sidebar />}
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                <Grid container spacing={3}>
+                <Grid container spacing={1}>
                     <Grid item xs={12} md={12}> 
                         <Hero/>
                     </Grid>
+                    <Profile/>
+                    <UpdateChart index = {0}/>
+                    <CustomizedTables/>
                 </Grid>
-                <CustomizedTables/>
-                <UpdateChart index = {0}/>
-                
             </Box>  
+            
         </Box>
     );
 }

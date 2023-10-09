@@ -20,7 +20,7 @@ export default function Searchbar({value, handleChange}) {
     }));
 
     const SearchIconWrapper = styled('div')(({ theme }) => ({
-        padding: theme.spacing(0, 180),
+        padding: theme.spacing(0, 179),
         height: '100%',
         position: 'absolute',
         pointerEvents: 'none',

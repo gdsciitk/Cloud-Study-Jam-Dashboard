@@ -1,0 +1,10 @@
+.ProfileBox{
+    color:inherit;
+    transform: translate(110%,-265%);
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    height: 255px;
+    width: 33%;
+}
+
