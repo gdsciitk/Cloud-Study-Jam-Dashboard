@@ -64,10 +64,11 @@ export default function CustomizedTables() {
             <TableRow>
               <StyledTableCell>Rank</StyledTableCell>
               <StyledTableCell align="right">Name</StyledTableCell>
-              <StyledTableCell align="right">Courses Completed</StyledTableCell>
-              <StyledTableCell align="right">Skill Badges Completed</StyledTableCell>
-              <StyledTableCell align="right">GenAI Completed</StyledTableCell>
-              <StyledTableCell align="right">Total Completed</StyledTableCell>
+              <StyledTableCell align="right"># of Courses Completed</StyledTableCell>
+              <StyledTableCell align="right"># of Skill Badges Completed</StyledTableCell>
+              <StyledTableCell align="right"># of GenAI Game Completed</StyledTableCell>
+              <StyledTableCell align="right">Total Completions of both Pathways</StyledTableCell>
+              <StyledTableCell align="right">Redemption Status</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -81,6 +82,7 @@ export default function CustomizedTables() {
                 <StyledTableCell align="right">{row.SkillBadges}</StyledTableCell>
                 <StyledTableCell align="right">{row.GenAI}</StyledTableCell>
                 <StyledTableCell align="right">{row.TotalC}</StyledTableCell>
+                <StyledTableCell align="right">{row.Redemption}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

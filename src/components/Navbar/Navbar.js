@@ -58,7 +58,7 @@ export default function Navbar({ handleThemeChange, toggleSidebar}) {
                 </Container>
                 <ThemeSwitcher handleThemeChange={handleThemeChange} />
                 <Divider orientation="vertical" flexItem />
-                <p className={styles.userName}>User Name</p>
+                <p className={styles.userName}>Kalika21</p>
                 <Avatar
                     sx={{ width: 30, height: 30, cursor: 'pointer' }}
                     alt="User Name"

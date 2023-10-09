@@ -9,7 +9,8 @@ export const leaderboard = [
         courseC : 8,
         SkillBadges: 9, 
         GenAI : 4, 
-        TotalC : "Yes" 
+        TotalC : "Yes",
+        Redemption : "No"
     },
     { 
         rank : 4, 
@@ -17,7 +18,9 @@ export const leaderboard = [
         courseC : 8,
         SkillBadges: 9, 
         GenAI : 4, 
-        TotalC : "Yes" 
+        TotalC : "Yes" ,
+        Redemption : "Yes"
+
     },
     { 
         rank : 2, 
@@ -25,7 +28,8 @@ export const leaderboard = [
         courseC : 8,
         SkillBadges: 9, 
         GenAI : 4, 
-        TotalC : "Yes" 
+        TotalC : "Yes" ,
+        Redemption : "No"
     },
     { 
         rank : 6, 
@@ -33,7 +37,8 @@ export const leaderboard = [
         courseC : 8,
         SkillBadges: 9, 
         GenAI : 4, 
-        TotalC : "Yes" 
+        TotalC : "Yes" ,
+        Redemption : "Yes"
     },
     { 
         rank : 5, 
@@ -41,7 +46,8 @@ export const leaderboard = [
         courseC : 8,
         SkillBadges: 9, 
         GenAI : 4, 
-        TotalC : "Yes" 
+        TotalC : "Yes" ,
+        Redemption : "No"
     },
     { 
         rank : 10, 
@@ -49,7 +55,8 @@ export const leaderboard = [
         courseC : 8,
         SkillBadges: 9, 
         GenAI : 4, 
-        TotalC : "Yes" 
+        TotalC : "Yes" ,
+        Redemption : "Yes"
     }
 
 ]
