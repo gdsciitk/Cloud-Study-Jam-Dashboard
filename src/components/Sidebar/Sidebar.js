@@ -1,6 +1,3 @@
-import List from '@mui/material/List';
-import Drawer from '@mui/material/Drawer';
-
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -83,3 +80,4 @@ export default function Sidebar() {
         </Box>
     </Drawer>
 } 
+
