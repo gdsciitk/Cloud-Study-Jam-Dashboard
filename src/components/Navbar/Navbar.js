@@ -53,18 +53,10 @@ export default function Navbar({ handleThemeChange, toggleSidebar}) {
                         <MenuIcon/> 
                     </IconButton>}
                     <div>
-                    <img src="/gdsc.png" style={{width: "30rem", height: "42px", padding: "8px 0px 2px"}}/>
+                    <img src="/gdsciitklogo.png" style={{width: "28rem", height: "55px", padding: "8px 0px 2px"}}/>
                     </div>
                 </Container>
                 <ThemeSwitcher handleThemeChange={handleThemeChange} />
-                <Divider orientation="vertical" flexItem />
-                <p className={styles.userName}>Kalika21</p>
-                <Avatar
-                    sx={{ width: 30, height: 30, cursor: 'pointer' }}
-                    alt="User Name"
-                    src="https://images.unsplash.com/photo-1613679074971-91fc27180061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                    onClick={handleAvatarClick}
-                />
                 <Popover
                     open={Boolean(anchorEl)}
                     anchorEl={anchorEl}

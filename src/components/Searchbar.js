@@ -44,7 +44,7 @@ export default function Searchbar({value, handleChange}) {
                 placeholder="Search"
                 onChange={(event) => handleChange(event.target.value)}
                 value={value}
-                autoFocus // Add this line
+                autoFocus
             />
         </Search>
     );
