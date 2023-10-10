@@ -15,8 +15,9 @@ const sortedLeaderboard = [...leaderboard].sort((a, b) => a.rank - b.rank);
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.inherit,
+    color: theme.palette.common.inherit,
+    fontWeight: "bold",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
