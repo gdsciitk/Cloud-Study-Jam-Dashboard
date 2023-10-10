@@ -1,22 +1,17 @@
 import React from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import styled from "@emotion/styled";
-import { InputBase, alpha } from "@mui/material";
+import { InputBase} from "@mui/material";
 
 export default function Searchbar({value, handleChange}) {
 
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
-        // backgroundColor: alpha(theme.palette.common.white, 0.15),
-        // '&:hover': {
-        //     backgroundColor: alpha(theme.palette.common.white, 0.25),
-        // },
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(.8),
         width: '100%',
-        borderRadius: 8,
-        backgroundColor: theme.palette.mode == 'dark' ?  '#303030': '#f5f5f5'
+        backgroundColor: theme.palette.mode === 'dark' ? '#303030': '#f5f5f5'
     }));
 
     const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -28,6 +23,7 @@ export default function Searchbar({value, handleChange}) {
         alignItems: 'center',
         justifyContent: 'center',
     }));
+
 
     const StyledInputBase = styled(InputBase)(({ theme }) => ({
         color: 'inherit',
@@ -53,3 +49,4 @@ export default function Searchbar({value, handleChange}) {
         </Search>
     );
 }
+
