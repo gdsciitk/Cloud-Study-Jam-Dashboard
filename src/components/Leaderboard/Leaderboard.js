@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Papa from 'papaparse';
-import { useState, useRef } from 'react';
+import { useState, useRef,useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -76,7 +76,11 @@ export default function CustomizedTables() {
   console.log('Leaderboard \n', sortedLeaderboard)
 
   const [searched, setSearched] = useState("");
-  const [rows, setRows] = useState(sortedLeaderboard);
+  //const [rows, setRows] = useState(sortedLeaderboard);
+  const [rows, setRows] = useState([]);
+  useEffect(() => {
+    setRows(sortedLeaderboard);
+  }, [sortedLeaderboard]);
 
   console.log(rows)
 
@@ -88,6 +92,7 @@ export default function CustomizedTables() {
         setRows(filteredRows);
   }
 
+  
   const cancelSearch = () => {
     setSearched("");
     setRows(sortedLeaderboard);
