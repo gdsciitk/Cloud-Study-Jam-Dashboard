@@ -12,6 +12,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import React from "react";
 import { Box, Toolbar } from '@mui/material';
+import Drawer from '@mui/material/Drawer';
 
 export default function Sidebar() {
     return <Drawer
