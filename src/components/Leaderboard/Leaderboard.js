@@ -67,7 +67,6 @@ export default function CustomizedTables() {
       })
     })
     firstRender = false
-
   }
 
   console.log(values);
@@ -79,6 +78,7 @@ export default function CustomizedTables() {
   const [searched, setSearched] = useState("");
   const [rows, setRows] = useState(sortedLeaderboard);
 
+  console.log(rows)
 
   if(prevsearch!=searched){
         const filteredRows = sortedLeaderboard.filter((row) => {
