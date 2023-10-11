@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Papa from 'papaparse';
 import { useState, useRef } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -9,9 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import SearchBar from '../Searchbar';
-import { leaderboard } from '../../data';
-
-const sortedLeaderboard = [...leaderboard].sort((a, b) => a.rank - b.rank);
+import datacsv from './data.csv'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,14 +33,56 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 let prevsearch = ""
+let firstRender = true
 
 export default function CustomizedTables() {
+
+  const [data, setData] = useState([]);
+  const [colArr, setColumn] = useState([]);
+  const [values, setValues] = useState([]);
+
+  if(firstRender){
+
+    fetch(datacsv)
+    .then( res => res.text() )
+    .then( csv => {
+      const colArr = [];
+      const valArr = [];
+
+      Papa.parse(csv,{
+        header: true,
+        skipEmptyLines: true,
+        complete: function(result){
+          console.log("HERE")
+          console.log(csv)
+        
+          result.data.map((d)=>{
+            colArr.push(Object.keys(d));
+            valArr.push(Object.values(d));
+          });
+          setData(result.data);
+          setColumn(colArr[0]);
+          setValues(valArr);
+        }
+      })
+    })
+    firstRender = false
+  }
+
+  console.log(values);
+
+  const sortedLeaderboard = [...values].sort((a, b) => a[11] - b[11]);
+
+  console.log('Leaderboard \n', sortedLeaderboard)
+
   const [searched, setSearched] = useState("");
   const [rows, setRows] = useState(sortedLeaderboard);
 
+  console.log(rows)
+
   if(prevsearch!=searched){
         const filteredRows = sortedLeaderboard.filter((row) => {
-            return row.name.toLowerCase().includes(searched.toLowerCase());
+            return row[0].toLowerCase().includes(searched.toLowerCase());
         });
         prevsearch = searched;
         setRows(filteredRows);
@@ -56,6 +97,10 @@ export default function CustomizedTables() {
     setSearched(value);
   };
 
+  // Student Name, Student Email, Institution, Enrolment Date & Time, Enrolment Status, Google Cloud Skills Boost Profile URL, # of Courses Completed, # of Skill Badges Completed, # of GenAI Game Completed, Total Completions of both Pathways, Redemption Status, Rank
+  //     0               1             1                  3                 4                              5                                6                       7                             8                            9                          10           11
+  // colArr
+
   return (
     <>
       <SearchBar value={searched} handleChange={handleSearchInputChange} cancelSearch={cancelSearch} />
@@ -63,27 +108,27 @@ export default function CustomizedTables() {
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Rank</StyledTableCell>
-              <StyledTableCell align="right">Name</StyledTableCell>
-              <StyledTableCell align="right"># of Courses Completed</StyledTableCell>
-              <StyledTableCell align="right"># of Skill Badges Completed</StyledTableCell>
-              <StyledTableCell align="right"># of GenAI Game Completed</StyledTableCell>
-              <StyledTableCell align="right">Total Completions of both Pathways</StyledTableCell>
-              <StyledTableCell align="right">Redemption Status</StyledTableCell>
+              <StyledTableCell>{colArr[11]}</StyledTableCell>
+              <StyledTableCell align="right">{colArr[0]}</StyledTableCell>
+              <StyledTableCell align="right">{colArr[6]}</StyledTableCell>
+              <StyledTableCell align="right">{colArr[7]}</StyledTableCell>
+              <StyledTableCell align="right">{colArr[8]}</StyledTableCell>
+              <StyledTableCell align="right">{colArr[9]}</StyledTableCell>
+              <StyledTableCell align="right">{colArr[10]}</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => (
-              <StyledTableRow key={row.rank}>
+              <StyledTableRow key={row[11]}>
                 <StyledTableCell component="th" scope="row">
-                  {row.rank}
-                </StyledTableCell>
-                <StyledTableCell align="right">{row.name}</StyledTableCell>
-                <StyledTableCell align="right">{row.courseC}</StyledTableCell>
-                <StyledTableCell align="right">{row.SkillBadges}</StyledTableCell>
-                <StyledTableCell align="right">{row.GenAI}</StyledTableCell>
-                <StyledTableCell align="right">{row.TotalC}</StyledTableCell>
-                <StyledTableCell align="right">{row.Redemption}</StyledTableCell>
+                  {row[11]}
+                </StyledTableCell>  
+                <StyledTableCell align="right">{row[0]}</StyledTableCell>
+                <StyledTableCell align="right">{row[6]}</StyledTableCell>
+                <StyledTableCell align="right">{row[7]}</StyledTableCell>
+                <StyledTableCell align="right">{row[8]}</StyledTableCell>
+                <StyledTableCell align="right">{row[9]}</StyledTableCell>
+                <StyledTableCell align="right">{row[10]}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
