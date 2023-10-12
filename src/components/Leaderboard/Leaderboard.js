@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import SearchBar from '../Searchbar';
-import datacsv from './data.csv'
+import datacsv from '../data/data.csv'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -33,7 +33,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 let prevsearch = ""
-let firstRender = true
+let firstRender = 1
 
 export default function CustomizedTables() {
 
@@ -66,7 +66,7 @@ export default function CustomizedTables() {
         }
       })
     })
-    firstRender = false
+    firstRender -=1
   }
 
   console.log(values);
