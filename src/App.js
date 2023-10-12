@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import SharedLayout from './pages/SharedLayout'
 import { useState } from "react";
 
+
 function App() {
   const [themeLight, setThemeType] = useState(false);
   const theme = createTheme({
@@ -15,6 +16,9 @@ function App() {
       }
     },
   });
+
+  console.log(theme.palette.mode)
+
   function handleThemeChange() {
     setThemeType(!themeLight);
   }

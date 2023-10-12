@@ -33,7 +33,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 let prevsearch = ""
-let firstRender = true
+let firstRender = 1
 
 export default function CustomizedTables() {
 
@@ -66,7 +66,7 @@ export default function CustomizedTables() {
         }
       })
     })
-    firstRender = false
+    firstRender -=1
   }
 
   console.log(values);
