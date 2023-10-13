@@ -1,8 +1,9 @@
 .ProfileBox{
     color:inherit;
     position: absolute;
-    top: 320px; /* Adjust this value to move the div vertically */
-    left: 630px; /* Adjust this value to move the div horizontally */
+    top: 250px; /* Adjust this value to move the div vertically */
+    left: 40%; /* Adjust this value to move the div horizontally */
+    right: 40%;
     text-align: center;
     height: 135px;
     width: 22%;
