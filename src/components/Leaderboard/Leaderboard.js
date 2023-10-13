@@ -82,10 +82,10 @@ export default function CustomizedTables() {
 
   if(prevsearch!=searched){
         const filteredRows = sortedLeaderboard.filter((row) => {
-            return row[0].toLowerCase().includes(searched.toLowerCase());
-        });
-        prevsearch = searched;
-        setRows(filteredRows);
+        return row[0].toLowerCase().includes(searched.toLowerCase());
+    });
+    prevsearch = searched;
+    setRows(filteredRows);
   }
 
   const cancelSearch = () => {
