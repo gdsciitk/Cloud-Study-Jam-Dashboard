@@ -53,7 +53,6 @@ export default function Dashboard({ handleThemeChange }) {
                         <Hero/>
                     </Grid>
                     <Profile/>
-                    <UpdateChart index = {0}/>
                     <CustomizedTables/>
                 </Grid>
             </Box>  
