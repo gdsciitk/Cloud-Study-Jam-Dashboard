@@ -76,11 +76,12 @@ export default function CustomizedTables() {
   console.log('Leaderboard \n', sortedLeaderboard)
 
   const [searched, setSearched] = useState("");
-  //const [rows, setRows] = useState(sortedLeaderboard);
-  const [rows, setRows] = useState([]);
-  useEffect(() => {
-    setRows(sortedLeaderboard);
-  }, [sortedLeaderboard]);
+  const [rows, setRows] = useState(sortedLeaderboard);
+  
+  // const [rows, setRows] = useState([]);
+  // useEffect(() => {
+  //   setRows(sortedLeaderboard);
+  // }, [sortedLeaderboard]);
 
   console.log(rows)
 
