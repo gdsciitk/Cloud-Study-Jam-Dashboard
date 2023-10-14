@@ -96,12 +96,12 @@ export default function CustomizedTables() {
           <TableHead>
             <TableRow>
               <StyledTableCell>{colArr[11]}</StyledTableCell>
-              <StyledTableCell align="right">{colArr[0]}</StyledTableCell>
-              <StyledTableCell align="right">{colArr[6]}</StyledTableCell>
-              <StyledTableCell align="right">{colArr[7]}</StyledTableCell>
-              <StyledTableCell align="right">{colArr[8]}</StyledTableCell>
-              <StyledTableCell align="right">{colArr[9]}</StyledTableCell>
-              <StyledTableCell align="right">{colArr[10]}</StyledTableCell>
+              <StyledTableCell align="left">{colArr[0]}</StyledTableCell>
+              <StyledTableCell align="centre">{colArr[6]}</StyledTableCell>
+              <StyledTableCell align="center">{colArr[7]}</StyledTableCell>
+              <StyledTableCell align="center">{colArr[8]}</StyledTableCell>
+              <StyledTableCell align="center">{colArr[9]}</StyledTableCell>
+              <StyledTableCell align="center">{colArr[10]}</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -110,12 +110,12 @@ export default function CustomizedTables() {
                 <StyledTableCell component="th" scope="row">
                   {row[11]}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row[0]}</StyledTableCell>
-                <StyledTableCell align="right">{row[6]}</StyledTableCell>
-                <StyledTableCell align="right">{row[7]}</StyledTableCell>
-                <StyledTableCell align="right">{row[8]}</StyledTableCell>
-                <StyledTableCell align="right">{row[9]}</StyledTableCell>
-                <StyledTableCell align="right">{row[10]}</StyledTableCell>
+                <StyledTableCell align="left">{row[0]}</StyledTableCell>
+                <StyledTableCell align="center">{row[6]}</StyledTableCell>
+                <StyledTableCell align="center">{row[7]}</StyledTableCell>
+                <StyledTableCell align="center">{row[8]}</StyledTableCell>
+                <StyledTableCell align="center">{row[9]}</StyledTableCell>
+                <StyledTableCell align="center">{row[10]}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
