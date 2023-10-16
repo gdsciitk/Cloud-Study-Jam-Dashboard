@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Cloud-Study-Jam-Dashboard/static/css/main.d0d9cef8.css",
+    "main.js": "/Cloud-Study-Jam-Dashboard/static/js/main.2454065e.js",
+    "static/media/data.csv": "/Cloud-Study-Jam-Dashboard/static/media/data.9b8ac8f33fe18844efb5.csv",
+    "index.html": "/Cloud-Study-Jam-Dashboard/index.html",
+    "main.d0d9cef8.css.map": "/Cloud-Study-Jam-Dashboard/static/css/main.d0d9cef8.css.map",
+    "main.2454065e.js.map": "/Cloud-Study-Jam-Dashboard/static/js/main.2454065e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0d9cef8.css",
+    "static/js/main.2454065e.js"
+  ]
+}
