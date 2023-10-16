@@ -1,13 +1,11 @@
-# [Google Cloud Progress Website](https://anishsahu10.github.io/dashboard/)
-This is an application developed using `ReactJS`, `Material-UI` and `ChartJS`.
-Deployed on github-pages:
-[Google Cloud Progress Tracker](https://anishsahu10.github.io/dashboard/)
+# Google Cloud Progress Website
+This is an application developed using `ReactJS` and `Material-UI`.
 
 ## Features
-* Display data using bar chart, pie chart, etc. (`ChartJS` library used)
+
 * Theme switcher implemented supporting `light` and `dark` themes.
 * `Dashboard` showing relevant information
-* `Sidebar` to navigate (only dashboard tab is implemented)
+
 
 ## Installation and setup
 * Clone the repo
