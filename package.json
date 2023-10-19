@@ -1,7 +1,7 @@
 {
   "name": "tracker-app",
   "version": "0.1.0",
-  "homepage":"https://github.com/gdsciitk/Cloud-Study-Jam-Dashboard" ,
+  "homepage":"https://main--cloud-study-jam-iitk.netlify.app/" ,
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
