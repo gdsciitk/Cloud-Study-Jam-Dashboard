@@ -2,7 +2,7 @@
   "homepage": "http://gdsciitk.github.io/Cloud-Study-Jam-Dashboard",
   "name": "tracker-app",
   "version": "0.1.0",
-  "homepage":"https://cloud-study-jam-iitk.vercel.app/" ,
+  "homepage":"https://github.com/gdsciitk/Cloud-Study-Jam-Dashboard" ,
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
