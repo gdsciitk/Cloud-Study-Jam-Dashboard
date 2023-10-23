@@ -1,10 +1,14 @@
 import React from 'react'
+import { useTheme } from "@mui/material/styles";
+import { Box } from '@mui/material';
 
 export default function Hero() {
+    const theme = useTheme();
     return (
             <div class="ProfileBox">
-                <h2>Hello, Cloud Study Jammer!</h2>
-                <p>Ready, Set, Jam! Let the Learning Begin!</p>
+                <Box pb={2}>
+                    {theme.palette.mode  === 'dark' ? <img src='/welcomeDARK.png' style={{ width: "100%" }} /> : <img src='/welcomeLIGHT.png' style={{ width: "100%" }} />}
+                </Box>
             </div>
         )
     }
