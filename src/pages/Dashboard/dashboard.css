@@ -1,11 +1,11 @@
 .ProfileBox{
     color:inherit;
     position: absolute;
-    top: 35%; /* Adjust this value to move the div vertically */
-    left: 40%; /* Adjust this value to move the div horizontally */
+    top: 31.5%; /* Adjust this value to move the div vertically */
+    left: 31%; /* Adjust this value to move the div horizontally */
     right: 40%;
     text-align: center;
     height: 135px;
-    width: 22%;
+    width: 38%;
 }
 
