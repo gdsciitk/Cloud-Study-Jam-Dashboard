@@ -6,9 +6,9 @@ export default function Hero() {
     const theme = useTheme();
     return (
             <div class="ProfileBox">
-                <Box pb={2}>
+                {/* <Box pb={2}>
                     {theme.palette.mode  === 'dark' ? <img src='/welcomeDARK.png' style={{ width: "100%" }} /> : <img src='/welcomeLIGHT.png' style={{ width: "100%" }} />}
-                </Box>
+                </Box> */}
             </div>
         )
     }
