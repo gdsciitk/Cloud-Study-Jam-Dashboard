@@ -10,6 +10,7 @@ import Hero from '../../components/Hero';
 import Searchbar from '../../components/Searchbar';
 import styles from './dashboard.css'
 import Profile from './Profile'
+import Typography from '@mui/material/Typography'; // Import the Typography component
 
 export default function Dashboard({ handleThemeChange }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -37,21 +38,25 @@ export default function Dashboard({ handleThemeChange }) {
     };
 
     return (
-        <Box sx={{ display: 'flex'}}>-
+        <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <Navbar handleThemeChange={handleThemeChange} toggleSidebar={togglesmallSidebar}/>
+            <Navbar handleThemeChange={handleThemeChange} toggleSidebar={togglesmallSidebar} />
             {isSidebarOpen && <Sidebar />}
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
                 <Grid container spacing={1}>
-                    <Grid item xs={12} md={12}> 
-                        <Hero/>
+                    <Grid item xs={12} md={12}>
+                        <Hero />
                     </Grid>
-                    <Profile/>
-                    <CustomizedTables/>
+                    <Grid item xs={12} md={12}> {/* Add this grid item for the date and time */}
+                        <Typography variant="body2" color="textSecondary">
+                            Last Updated: {new Date('2023-10-26 01:30:00').toLocaleString()}
+                        </Typography>
+                    </Grid>
+                    <Profile />
+                    <CustomizedTables />
                 </Grid>
-            </Box>  
-            
+            </Box>
         </Box>
     );
 }

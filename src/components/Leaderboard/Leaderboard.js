@@ -1,25 +1,23 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
-import { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import TableSortLabel from '@mui/material/TableSortLabel'; // Import TableSortLabel
 import Paper from '@mui/material/Paper';
 import SearchBar from '../Searchbar';
 import datacsv from '../data/data.csv';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.inherit,
-    color: theme.palette.common.inherit,
-    fontWeight: "bold",
+  [`&.${theme.breakpoints.up('sm')}`]: {
+    padding: '8px',
   },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+  [`&.${theme.breakpoints.down('sm')}`]: {
+    padding: '4px',
   },
 }));
 
@@ -27,18 +25,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
 }));
 
 export default function CustomizedTables() {
   const [data, setData] = useState([]);
   const [colArr, setColumn] = useState([]);
   const [values, setValues] = useState([]);
-  const [searched, setSearched] = useState("");
+  const [searched, setSearched] = useState('');
   const [rows, setRows] = useState([]);
-  const [sortColumnIndex, setSortColumnIndex] = useState(9);
+  const [sortColumnIndex, setSortColumnIndex] = useState(null);
+  const [sortDirection, setSortDirection] = useState('asc');
 
   useEffect(() => {
     fetch(datacsv)
@@ -56,16 +52,6 @@ export default function CustomizedTables() {
               valArr.push(Object.values(d));
             });
 
-            // Sort the data according to your specified order
-            valArr.sort((a, b) => {
-              if (a[sortColumnIndex] === b[sortColumnIndex]) {
-                // If column 9 is equal, sort by columns 8, 7, and 6 in descending order
-                return b[8] - a[8] || b[7] - a[7] || b[6] - a[6];
-              }
-              // Sort by column 9 in ascending order
-              return a[sortColumnIndex] - b[sortColumnIndex];
-            });
-
             setData(result.data);
             setColumn(colArr[0]);
             setValues(valArr);
@@ -73,7 +59,7 @@ export default function CustomizedTables() {
           },
         });
       });
-  }, [sortColumnIndex]); // Re-run the effect when sortColumnIndex changes
+  }, []);
 
   const handleSearchInputChange = (value) => {
     setSearched(value);
@@ -84,24 +70,84 @@ export default function CustomizedTables() {
   };
 
   const cancelSearch = () => {
-    setSearched("");
+    setSearched('');
     setRows(values);
+  };
+
+  const handleHeaderClick = (columnIndex) => {
+    if (columnIndex === sortColumnIndex) {
+      // Toggle the sorting direction
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      // Set the new sorting column and default to ascending order
+      setSortColumnIndex(columnIndex);
+      setSortDirection('asc');
+    }
+
+    const sortedRows = [...rows].sort((a, b) => {
+      const sortOrder = sortDirection === 'asc' ? 1 : -1;
+      return a[columnIndex].localeCompare(b[columnIndex]) * sortOrder;
+    });
+
+    setRows(sortedRows);
   };
 
   return (
     <>
       <SearchBar value={searched} handleChange={handleSearchInputChange} cancelSearch={cancelSearch} />
-      <TableContainer component={Paper} style={{ marginBottom: "10px" }}>
+      <TableContainer component={Paper} style={{ marginBottom: '10px' }}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>{colArr[11]}</StyledTableCell>
-              <StyledTableCell align="left">{colArr[0]}</StyledTableCell>
-              <StyledTableCell align="centre">{colArr[6]}</StyledTableCell>
-              <StyledTableCell align="center">{colArr[7]}</StyledTableCell>
-              <StyledTableCell align="center">{colArr[8]}</StyledTableCell>
-              <StyledTableCell align="center">{colArr[9]}</StyledTableCell>
-              <StyledTableCell align="center">{colArr[10]}</StyledTableCell>
+              <SortableHeader
+                label={colArr[11]}
+                columnIndex={11}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
+              <SortableHeader
+                label={colArr[0]}
+                columnIndex={0}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
+              <SortableHeader
+                label={colArr[6]}
+                columnIndex={6}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
+              <SortableHeader
+                label={colArr[7]}
+                columnIndex={7}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
+              <SortableHeader
+                label={colArr[8]}
+                columnIndex={8}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
+              <SortableHeader
+                label={colArr[9]}
+                columnIndex={9}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
+              <SortableHeader
+                label={colArr[10]}
+                columnIndex={10}
+                sortColumnIndex={sortColumnIndex}
+                sortDirection={sortDirection}
+                handleHeaderClick={handleHeaderClick}
+              />
             </TableRow>
           </TableHead>
           <TableBody>
@@ -122,5 +168,25 @@ export default function CustomizedTables() {
         </Table>
       </TableContainer>
     </>
+  );
+}
+
+function SortableHeader({
+  label,
+  columnIndex,
+  sortColumnIndex,
+  sortDirection,
+  handleHeaderClick,
+}) {
+  return (
+    <StyledTableCell>
+      <TableSortLabel
+        active={columnIndex === sortColumnIndex}
+        direction={columnIndex === sortColumnIndex ? sortDirection : 'asc'}
+        onClick={() => handleHeaderClick(columnIndex)}
+      >
+        {label}
+      </TableSortLabel>
+    </StyledTableCell>
   );
 }
